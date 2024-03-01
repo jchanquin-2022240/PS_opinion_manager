@@ -1,9 +1,8 @@
 import express from 'express';
-import express from 'express';
 import cors from 'cors';
 import helmet from 'helmet';
 import morgan from 'morgan';
-
+import { dbConnection } from './mongo.js';
 class Server {
     constructor() {
         this.app = express();
@@ -33,7 +32,9 @@ class Server {
 
     listen() {
         this.app.listen(this.port, () => {
-            console.log('Server running and listening to port', this.port)
+            console.log('Server running and listening to port:', this.port)
         });
     }   
 }
+
+export default Server;
