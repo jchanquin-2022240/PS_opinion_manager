@@ -4,6 +4,7 @@ import helmet from 'helmet';
 import morgan from 'morgan';
 import userRoutes from '../src/users/user.routes.js';
 import authRoutes from '../src/auth/auth.routes.js';
+import publicationRoutes from '../src/publications/publication.routes.js';
 import { dbConnection } from './mongo.js';
 class Server {
     constructor() {
@@ -11,6 +12,7 @@ class Server {
         this.port = process.env.PORT;
         this.authPath = "/comments/v1/auth";
         this.userPath = "/comments/v1/user";
+        this.publicationPath = "/comments/v1/publication";
      
         this.conectarDB();
         this.middlewares();
@@ -32,6 +34,7 @@ class Server {
     routes(){
         this.app.use(this.authPath, authRoutes);
         this.app.use(this.userPath, userRoutes);
+        this.app.use(this.publicationPath, publicationRoutes);
     }
 
     listen() {
