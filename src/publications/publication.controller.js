@@ -36,11 +36,34 @@ export const putMyPublication = async ( req, res) => {
 
             const updatePost = await Publication.findOne({_id: id});
 
-            res.status(200).json({ msg: "Update sucessfully!!!", updatePost});
+            res.status(200).json({ msg: "Post update successfully!!!", updatePost});
         } else {
-            res.status(402).json({ msg: "You can't edit this post" });
+            res.status(403).json({ msg: "You can't edit this post" });
         }
     } catch (e) {
         return res.status(500).json({ msg: "Conflict when updating"});
     }
 }
+
+export const deleteMyPublication = async (req, res) => {
+    const {id} = req.params;
+    const username = req.user.username;
+
+    try {
+        const publication = await Publication.findById(id);
+
+        if (publication.username === username) {
+            const publication = await Publication.findByIdAndUpdate(id, {publicationStatus : false});
+            const deletePost = await Publication.findOne({ _id : id});
+
+            res.status(200).json({ msg: "Post successfully deleted", publication, deletePost})
+        } else {
+            res.status(403).json({ msg: "You can't delete this post"});
+        }
+    } catch (e) {
+        return res.status(500).json({ msg: "Conflict when deleting" });
+    }
+}
+
+
+//comments
