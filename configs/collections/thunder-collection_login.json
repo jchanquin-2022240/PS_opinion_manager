@@ -1,0 +1,47 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "login",
+    "dateExported": "2024-03-03T05:40:43.663Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "a8ecafdf-4596-4291-8149-89ffdd3dc142",
+            "colId": "07ae1d7f-bfeb-45b3-9916-fc41d9c02a03",
+            "containerId": "",
+            "name": "post loginEmail",
+            "url": "http://localhost:3000/comments/v1/auth/loginEmail",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-03-03T05:24:30.842Z",
+            "modified": "2024-03-03T05:30:37.703Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"email\": \"user1@gmail.com\",\n  \"password\": \"12345678\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "908baeae-fbe2-4674-a83f-bc61d4b81bb1",
+            "colId": "07ae1d7f-bfeb-45b3-9916-fc41d9c02a03",
+            "containerId": "",
+            "name": "post loginUsername",
+            "url": "http://localhost:3000/comments/v1/auth/loginUsername",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2024-03-03T05:38:17.647Z",
+            "modified": "2024-03-03T05:40:28.382Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"username\": \"user1\",\n  \"password\": \"1234578\"\n}",
+                "form": []
+            },
+            "tests": []
+        }
+    ]
+}
