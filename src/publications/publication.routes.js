@@ -4,7 +4,8 @@ import { check } from "express-validator";
 import {
     publicationPost,
     publicationGetAll,
-    putMyPublication
+    putMyPublication,
+    deleteMyPublication
 } from "./publication.controller.js";
 
 import { validateFields } from "../middlewares/validate-fields.js";
@@ -31,5 +32,14 @@ router.put(
         check('id', "ID invalid").isMongoId(),
         validateFields,
     ], putMyPublication);
+
+router.delete(
+    "/deleteMyPost/:id",
+    [
+        validateJWT,
+        check('id', "ID invalid").isMongoId(),
+        validateFields
+    ], deleteMyPublication);
+
 
 export default router;
