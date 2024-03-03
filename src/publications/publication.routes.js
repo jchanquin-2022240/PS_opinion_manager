@@ -2,13 +2,16 @@ import { Router } from "express";
 import { check } from "express-validator";
 
 import {
-    publicationPost
+    publicationPost,
+    publicationGetAll
 } from "./publication.controller.js";
 
 import { validateFields } from "../middlewares/validate-fields.js";
 import { validateJWT } from "../middlewares/validate-jwt.js";
 
 const router = Router();
+
+router.get("/", validateJWT, publicationGetAll);
 
 router.post(
     "/",
