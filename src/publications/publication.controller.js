@@ -37,6 +37,8 @@ export const putMyPublication = async ( req, res) => {
             const updatePost = await Publication.findOne({_id: id});
 
             res.status(200).json({ msg: "Update sucessfully!!!", updatePost});
+        } else {
+            res.status(402).json({ msg: "You can't edit this post" });
         }
     } catch (e) {
         return res.status(500).json({ msg: "Conflict when updating"});
