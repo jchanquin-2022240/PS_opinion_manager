@@ -1,0 +1,88 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "publications",
+    "dateExported": "2024-03-03T20:58:03.860Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "c03b716e-8277-4d3c-b7f8-d255a8ee45b0",
+            "colId": "1f316e46-99b9-4eeb-bba6-d6f0ccaa8999",
+            "containerId": "",
+            "name": "post createPublication",
+            "url": "http://localhost:3000/comments/v1/publication",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2024-03-03T18:17:05.341Z",
+            "modified": "2024-03-03T18:19:05.552Z",
+            "headers": [
+                {
+                    "name": "new-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWUzZDQ3ZjE4OWQyZTBhZTI5OTgyOTUiLCJpYXQiOjE3MDk0ODcwODEsImV4cCI6MTcwOTQ5NDI4MX0.tyi6n0HP_5IAldR50WFEMvVivj4O9xPDwi48S29MEd4"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"title\": \"Memes\",\n  \"category\": \"comedia \",\n  \"text\": \"Hoy les contaré un chiste.\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "69630fd7-ae74-4af8-a945-fbaa20928edf",
+            "colId": "1f316e46-99b9-4eeb-bba6-d6f0ccaa8999",
+            "containerId": "",
+            "name": "get seeAll",
+            "url": "http://localhost:3000/comments/v1/publication",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2024-03-03T18:51:57.107Z",
+            "modified": "2024-03-03T19:28:48.283Z",
+            "headers": [
+                {
+                    "name": "new-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWU0Y2U4M2JiMTljMTY2YTk3NjMxZmUiLCJpYXQiOjE3MDk0OTM5MDEsImV4cCI6MTcwOTUwMTEwMX0.weGKQE20DfhlB5UK0U0khvcskj0SQunE-iqP3-Xx6cE"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "694c0b60-4386-410d-92b0-8195b5e51597",
+            "colId": "1f316e46-99b9-4eeb-bba6-d6f0ccaa8999",
+            "containerId": "",
+            "name": "put myPost",
+            "url": "http://localhost:3000/comments/v1/publication/updateMyPost/65e4bf19c64259d4ce2d8573",
+            "method": "PUT",
+            "sortNum": 40000,
+            "created": "2024-03-03T19:19:53.126Z",
+            "modified": "2024-03-03T19:27:53.845Z",
+            "headers": [
+                {
+                    "name": "new-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWUzZDQ3ZjE4OWQyZTBhZTI5OTgyOTUiLCJpYXQiOjE3MDk0OTM4MzUsImV4cCI6MTcwOTUwMTAzNX0.n4mH6fCaRG4zpKReS7lTSYqrxWEPTHgt7tUMZiI4wKM"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"title\": \"Noticia\",\n  \"category\": \"información\",\n  \"text\": \"Accidente en kinal\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "79ab25fc-3c4b-43de-adfe-225947567417",
+            "colId": "1f316e46-99b9-4eeb-bba6-d6f0ccaa8999",
+            "containerId": "",
+            "name": "delete myPost",
+            "url": "",
+            "method": "GET",
+            "sortNum": 50000,
+            "created": "2024-03-03T19:58:42.117Z",
+            "modified": "2024-03-03T19:58:42.117Z",
+            "headers": []
+        }
+    ]
+}
