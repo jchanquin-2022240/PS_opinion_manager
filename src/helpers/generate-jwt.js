@@ -5,7 +5,7 @@ export const generateJWT = (uid = '') => {
         const payload = { uid };
         jwt.sign(
             payload,
-            proces.env.SECRETORPRIVATEKEY,
+            process.env.SECRETORPRIVATEKEY,
             {
                 expiresIn: '2h'
             },
