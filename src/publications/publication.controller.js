@@ -67,3 +67,16 @@ export const deleteMyPublication = async (req, res) => {
 
 
 //comments
+
+export const putAddComment = async (req, res) => {
+    const { id } = req.params;
+    const { _id, username, title, category, pubicationStatus, ...resto} = req.body;
+
+    const commentUser = req.user.username;
+    const addComment = { commentUser: commentUser, ...resto};
+
+    await Publication.findByIdAndUpdate( id, { $push: { comments: addComment }});
+    const publication = await Publication.findOne({ _id: id});
+
+    res.status(200).json({ msg: "Added comment successfully!!!", publication});
+}

@@ -17,7 +17,7 @@ const PublicationSchema = mongoose.Schema({
         required: [true, "Post text is required"]
     },
     comments:[{
-        usernameC: {
+        commentUser: {
             type: String
         },
         commentU: {
