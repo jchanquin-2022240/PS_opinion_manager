@@ -9,7 +9,7 @@ import { validateFields } from "../middlewares/validate-fields.js";
 import { existingEmail, existingUsername } from "../helpers/db-validators.js";
 
 
-const router = Router ();
+const router = Router();
 
 router.post(
     "/",
