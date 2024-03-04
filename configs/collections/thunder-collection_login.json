@@ -1,7 +1,7 @@
 {
     "client": "Thunder Client",
     "collectionName": "login",
-    "dateExported": "2024-03-03T17:33:17.151Z",
+    "dateExported": "2024-03-04T02:10:24.285Z",
     "version": "1.1",
     "folders": [],
     "requests": [
@@ -14,12 +14,12 @@
             "method": "POST",
             "sortNum": 10000,
             "created": "2024-03-03T05:24:30.842Z",
-            "modified": "2024-03-03T05:30:37.703Z",
+            "modified": "2024-03-04T02:03:16.499Z",
             "headers": [],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"email\": \"user1@gmail.com\",\n  \"password\": \"12345678\"\n}",
+                "raw": "{\n  \"email\": \"user3@gmail.com\",\n  \"password\": \"password123\"\n}",
                 "form": []
             },
             "tests": []
@@ -33,12 +33,36 @@
             "method": "POST",
             "sortNum": 20000,
             "created": "2024-03-03T05:38:17.647Z",
-            "modified": "2024-03-03T17:31:38.844Z",
+            "modified": "2024-03-04T02:09:19.085Z",
             "headers": [],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"username\": \"user1\",\n  \"password\": \"12345678\"\n}",
+                "raw": "{\n  \"username\": \"user-3\",\n  \"password\": \"password123\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "36128e17-a29a-4e3c-ad74-679a088a4057",
+            "colId": "07ae1d7f-bfeb-45b3-9916-fc41d9c02a03",
+            "containerId": "",
+            "name": "put editProfile",
+            "url": "http://localhost:3000/comments/v1/user/65e5283ad4821cdce777bec4",
+            "method": "PUT",
+            "sortNum": 30000,
+            "created": "2024-03-04T01:33:41.645Z",
+            "modified": "2024-03-04T02:03:35.144Z",
+            "headers": [
+                {
+                    "name": "new-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWU1MjgzYWQ0ODIxY2RjZTc3N2JlYzQiLCJpYXQiOjE3MDk1MTY4ODQsImV4cCI6MTcwOTUyNDA4NH0._H6E6BBb51nzsJQMLTj35TJetGc6BCSCUgUOCnb453c"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"username\": \"user-3\",\n  \"oldPassword\": \"password123\",\n  \"password\": \"password123\"\n}",
                 "form": []
             },
             "tests": []
