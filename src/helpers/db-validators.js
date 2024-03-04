@@ -13,3 +13,10 @@ export const existingUsername = async (username = '') => {
         throw new Error(`Username ${username} already exists in the database`);
     }
 }
+
+export const existUserById = async (id = '') => {
+    const existUser = await User.findById(id);
+    if (!existUser) {
+        throw new Error(`The id: ${email} don't exist`)
+    }
+}
