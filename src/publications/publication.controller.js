@@ -126,3 +126,30 @@ export const updateMyComment = async (req = request, res = response) => {
         return res.status(500).json({ msg: "Internal Server Error" });
     }
 }
+
+export const deleteMyComment = async (req = request, res = response) => {
+    const { title, commentID } = req.params;
+    const commentUser = req.user.username;
+
+    try {
+        // Utilizamos findOneAndUpdate para actualizar y obtener la publicación actualizada
+        const publicationN = await Publication.findOneAndUpdate(
+            { title, "comments._id": commentID, "comments.commentUser": commentUser },
+            { $pull: { comments: { _id: commentID, commentUser: commentUser } } },
+            { new: true }
+        );
+
+        if (!publicationN) {
+            // Si no se encuentra la publicación, entonces no existía o no se cumplían las condiciones
+            return res.status(404).json({ msg: "Post or comment not found" });
+        }
+
+        res.status(200).json({
+            msg: "Comment successfully deleted",
+            publicationN
+        });
+    } catch (error) {
+        console.error(error);
+        return res.status(500).json({ msg: "Internal Server Error" });
+    }
+};

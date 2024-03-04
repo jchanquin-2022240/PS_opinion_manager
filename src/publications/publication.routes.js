@@ -7,7 +7,8 @@ import {
     putMyPublication,
     deleteMyPublication,
     putAddComment,
-    updateMyComment
+    updateMyComment,
+    deleteMyComment
 } from "./publication.controller.js";
 
 import { validateFields } from "../middlewares/validate-fields.js";
@@ -61,6 +62,12 @@ router.put(
         validateFields,
     ], updateMyComment);
 
-
-
+router.delete(
+    "/:title/:commentID",
+    [
+        validateJWT,
+        check('title', "It is not a valid id").not().isEmpty(),
+        check('commentID', "It is not a valid id").isMongoId(),
+        validateFields,
+    ], deleteMyComment);
 export default router;
