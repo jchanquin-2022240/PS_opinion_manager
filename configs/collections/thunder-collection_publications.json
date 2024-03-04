@@ -1,7 +1,7 @@
 {
     "client": "Thunder Client",
     "collectionName": "publications",
-    "dateExported": "2024-03-03T20:58:03.860Z",
+    "dateExported": "2024-03-04T01:08:38.422Z",
     "version": "1.1",
     "folders": [],
     "requests": [
@@ -38,11 +38,11 @@
             "method": "GET",
             "sortNum": 30000,
             "created": "2024-03-03T18:51:57.107Z",
-            "modified": "2024-03-03T19:28:48.283Z",
+            "modified": "2024-03-04T01:08:33.119Z",
             "headers": [
                 {
                     "name": "new-token",
-                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWU0Y2U4M2JiMTljMTY2YTk3NjMxZmUiLCJpYXQiOjE3MDk0OTM5MDEsImV4cCI6MTcwOTUwMTEwMX0.weGKQE20DfhlB5UK0U0khvcskj0SQunE-iqP3-Xx6cE"
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWUzZDQ3ZjE4OWQyZTBhZTI5OTgyOTUiLCJpYXQiOjE3MDk1MTMxNzgsImV4cCI6MTcwOTUyMDM3OH0.oOWPZPeOOLVCQJ-ZHms5gDScyh2lWfdVvQfFWRWe-x8"
                 }
             ],
             "params": [],
@@ -77,12 +77,19 @@
             "colId": "1f316e46-99b9-4eeb-bba6-d6f0ccaa8999",
             "containerId": "",
             "name": "delete myPost",
-            "url": "",
-            "method": "GET",
+            "url": "http://localhost:3000/comments/v1/publication/deleteMyPost/65e4bf19c64259d4ce2d8573",
+            "method": "DELETE",
             "sortNum": 50000,
             "created": "2024-03-03T19:58:42.117Z",
-            "modified": "2024-03-03T19:58:42.117Z",
-            "headers": []
+            "modified": "2024-03-04T01:08:18.586Z",
+            "headers": [
+                {
+                    "name": "new-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWUzZDQ3ZjE4OWQyZTBhZTI5OTgyOTUiLCJpYXQiOjE3MDk1MTMxNzgsImV4cCI6MTcwOTUyMDM3OH0.oOWPZPeOOLVCQJ-ZHms5gDScyh2lWfdVvQfFWRWe-x8"
+                }
+            ],
+            "params": [],
+            "tests": []
         }
     ]
 }
