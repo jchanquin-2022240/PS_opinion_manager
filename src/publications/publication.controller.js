@@ -80,3 +80,49 @@ export const putAddComment = async (req, res) => {
 
     res.status(200).json({ msg: "Added comment successfully!!!", publication});
 }
+
+export const updateMyComment = async (req = request, res = response) => {
+    const { title, commentID } = req.params;
+    const commentUser = req.user.username;
+
+    try {
+        const publication = await Publication.findOne({ title });
+
+        if (!publication) {
+            return res.status(404).json({ msg: "Post not found" });
+        }
+
+        if (!publication.publicationStatus) {
+            return res.status(403).json({ msg: "You can't update comments on an inactive post" });
+        }
+
+        const comentario = publication.comments.find(comment => comment._id.toString() === commentID);
+
+        if (!comentario) {
+            return res.status(404).json({ msg: "Comment not found" });
+        }
+
+        if (comentario.commentUser === commentUser) {
+            const { _id, ...rest } = req.body;
+
+            await Publication.findOneAndUpdate(
+                { title, "comments._id": commentID },
+                { $set: { "comments.$.commentU": rest.commentU, "comments.$.otherField": rest.otherField, "comments.$.commentUser": commentUser } }
+            );
+
+            const updatedPublication = await Publication.findOne({ title });
+
+            res.status(200).json({
+                msg: "Comment updated successfully",
+                publicationN: updatedPublication
+            });
+        } else {
+            res.status(403).json({
+                msg: "You are not the author of this comment"
+            });
+        }
+    } catch (error) {
+        console.error(error);
+        return res.status(500).json({ msg: "Internal Server Error" });
+    }
+}

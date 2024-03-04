@@ -6,7 +6,8 @@ import {
     publicationGetAll,
     putMyPublication,
     deleteMyPublication,
-    putAddComment
+    putAddComment,
+    updateMyComment
 } from "./publication.controller.js";
 
 import { validateFields } from "../middlewares/validate-fields.js";
@@ -50,6 +51,16 @@ router.put(
         check('id', "ID invalid").isMongoId(),
         validateFields,
     ], putAddComment);
+
+router.put(
+    "/:title/:commentID",
+    [
+        validateJWT,
+        check('title', "It is not a valid id").not().isEmpty(),
+        check('commentID', "It is not a valid id").isMongoId(),
+        validateFields,
+    ], updateMyComment);
+
 
 
 export default router;
