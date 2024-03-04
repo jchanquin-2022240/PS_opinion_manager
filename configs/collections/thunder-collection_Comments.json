@@ -1,0 +1,76 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "Comments",
+    "dateExported": "2024-03-04T00:58:21.224Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "76035aba-315d-4411-baa2-172f5a716e23",
+            "colId": "3d5ac580-4aa0-417e-a52c-abfa8161ccb2",
+            "containerId": "",
+            "name": "put addComment",
+            "url": "http://localhost:3000/comments/v1/publication/addComment/65e4bf19c64259d4ce2d8573",
+            "method": "PUT",
+            "sortNum": 10000,
+            "created": "2024-03-03T20:32:40.675Z",
+            "modified": "2024-03-04T00:46:00.178Z",
+            "headers": [
+                {
+                    "name": "new-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWU0Y2U4M2JiMTljMTY2YTk3NjMxZmUiLCJpYXQiOjE3MDk1MTA0MjEsImV4cCI6MTcwOTUxNzYyMX0.2T6PJyHb47GFb_NsmVc6L2aJuH8sAOCVKH4PxtEUTcs"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"commentU\": \"¿Qué paso?\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "f9d750c4-4c66-44e4-a379-01ad025af3c6",
+            "colId": "3d5ac580-4aa0-417e-a52c-abfa8161ccb2",
+            "containerId": "",
+            "name": "put editComment",
+            "url": "http://localhost:3000/comments/v1/publication/Noticia/65e519bf53365fde78eab911",
+            "method": "PUT",
+            "sortNum": 20000,
+            "created": "2024-03-03T23:58:22.036Z",
+            "modified": "2024-03-04T00:53:42.081Z",
+            "headers": [
+                {
+                    "name": "new-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWU0Y2U4M2JiMTljMTY2YTk3NjMxZmUiLCJpYXQiOjE3MDk1MTA0MjEsImV4cCI6MTcwOTUxNzYyMX0.2T6PJyHb47GFb_NsmVc6L2aJuH8sAOCVKH4PxtEUTcs"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"commentU\": \"Expliquen, ¿¿¿¿qué paso????\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "5f39c39c-b009-4538-a211-81eee77fc0dd",
+            "colId": "3d5ac580-4aa0-417e-a52c-abfa8161ccb2",
+            "containerId": "",
+            "name": "delete myComment",
+            "url": "http://localhost:3000/comments/v1/publication/Noticia/65e519b953365fde78eab9",
+            "method": "DELETE",
+            "sortNum": 30000,
+            "created": "2024-03-04T00:24:56.442Z",
+            "modified": "2024-03-04T00:57:30.064Z",
+            "headers": [
+                {
+                    "name": "new-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWU0Y2U4M2JiMTljMTY2YTk3NjMxZmUiLCJpYXQiOjE3MDk1MTA0MjEsImV4cCI6MTcwOTUxNzYyMX0.2T6PJyHb47GFb_NsmVc6L2aJuH8sAOCVKH4PxtEUTcs"
+                }
+            ],
+            "params": [],
+            "tests": []
+        }
+    ]
+}

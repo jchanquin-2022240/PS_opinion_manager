@@ -57,8 +57,8 @@ router.put(
     "/:title/:commentID",
     [
         validateJWT,
-        check('title', "It is not a valid id").not().isEmpty(),
-        check('commentID', "It is not a valid id").isMongoId(),
+        check('title', "ID invalid").not().isEmpty(),
+        check('commentID', "ID invalid").isMongoId(),
         validateFields,
     ], updateMyComment);
 
@@ -66,8 +66,8 @@ router.delete(
     "/:title/:commentID",
     [
         validateJWT,
-        check('title', "It is not a valid id").not().isEmpty(),
-        check('commentID', "It is not a valid id").isMongoId(),
+        check('title', "ID invalid").not().isEmpty(),
+        check('commentID', "ID invalid").isMongoId(),
         validateFields,
     ], deleteMyComment);
 export default router;
