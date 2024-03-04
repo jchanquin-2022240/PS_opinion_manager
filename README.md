@@ -24,19 +24,19 @@ publicaciones de Facebook, con funcionalidades específicas centradas en la inte
 expresión de opiniones por parte de los usuarios.
 Deberá contener lo siguiente:
 
-- [x] Inicio de sesión y Perfil de usuario: los usuarios podrán crear cuentas y acceder al
+- Inicio de sesión y Perfil de usuario: los usuarios podrán crear cuentas y acceder al
 sistema mediante un proceso de inicio de sesión seguro. El login debe poder realizarlo
 mediante correo o nombre de usuario, y contraseña. Podrán editar su perfil, nombre de
 usuario, contraseña (ingresar la anterior), etc.
 No se permitirá la eliminación de perfiles para garantizar la integridad de las opiniones y
 comentarios.
 
-- [x] Gestión de publicaciones: los usuarios podrán crear publicaciones para expresar sus
+- Gestión de publicaciones: los usuarios podrán crear publicaciones para expresar sus
 opiniones. Cada publicación contendrá un título, categoría y texto principal.
 Se permitirá la edición de publicaciones existentes para corregir errores o actualizar la
 información. Los usuarios podrán eliminar sus propias publicaciones, pero no las de otros.
 
-- [x] Comentarios: otros usuarios podrán comentar en las publicaciones para expresar sus
+- Comentarios: otros usuarios podrán comentar en las publicaciones para expresar sus
 opiniones o agregar información adicional.
 Los comentarios podrán ser editados para corregir posibles errores, sólo podrá editar sus
 propios comentarios.
