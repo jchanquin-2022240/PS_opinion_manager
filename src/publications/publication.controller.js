@@ -96,13 +96,11 @@ export const updateMyComment = async (req = request, res = response) => {
             return res.status(403).json({ msg: "You can't update comments on an inactive post" });
         }
 
-        const comentario = publication.comments.find(comment => comment._id.toString() === commentID);
+        const comment = publication.comments.find(comment => comment._id.toString() === commentID);
 
-        if (!comentario) {
-            return res.status(404).json({ msg: "Comment not found" });
-        }
+        if (!comment) return res.status(404).json({ msg: "Comment not found" });
 
-        if (comentario.commentUser === commentUser) {
+        if (comment.commentUser === commentUser) {
             const { _id, ...rest } = req.body;
 
             await Publication.findOneAndUpdate(
@@ -112,18 +110,13 @@ export const updateMyComment = async (req = request, res = response) => {
 
             const updatedPublication = await Publication.findOne({ title });
 
-            res.status(200).json({
-                msg: "Comment updated successfully",
-                publicationN: updatedPublication
-            });
+            res.status(200).json({ msg: "Comment updated successfully", publicationN: updatedPublication });
         } else {
-            res.status(403).json({
-                msg: "You are not the author of this comment"
-            });
+            res.status(403).json({ msg: "You are not the author of this comment" });
         }
-    } catch (error) {
-        console.error(error);
-        return res.status(500).json({ msg: "Internal Server Error" });
+    } catch (e) {
+        console.error(e);
+        return res.status(500).json({ msg: "Server conflict" });
     }
 }
 
@@ -133,23 +126,22 @@ export const deleteMyComment = async (req = request, res = response) => {
 
     try {
         // Utilizamos findOneAndUpdate para actualizar y obtener la publicación actualizada
-        const publicationN = await Publication.findOneAndUpdate(
+        const postE = await Publication.findOneAndUpdate(
             { title, "comments._id": commentID, "comments.commentUser": commentUser },
             { $pull: { comments: { _id: commentID, commentUser: commentUser } } },
             { new: true }
         );
 
-        if (!publicationN) {
-            // Si no se encuentra la publicación, entonces no existía o no se cumplían las condiciones
+        if (!postE) {
             return res.status(404).json({ msg: "Post or comment not found" });
         }
 
         res.status(200).json({
             msg: "Comment successfully deleted",
-            publicationN
+            postE
         });
-    } catch (error) {
-        console.error(error);
-        return res.status(500).json({ msg: "Internal Server Error" });
+    } catch (e) {
+        console.error(e);
+        return res.status(500).json({ msg: "Server conflict" });
     }
 };
