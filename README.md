@@ -1,5 +1,5 @@
 # PS_opinion_manager
-BackEnd (Node.js, Express y MongoDB)
+BackEnd (Node.js, Express y MongoDB) <br>
 module: nodemon "npm run dev"
 ## Función
 Esta conformado por 4 collections, todas funcionan con token excepto SingUp, LoginEmail y LoginUsername:
